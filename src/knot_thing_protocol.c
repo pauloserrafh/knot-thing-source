@@ -374,6 +374,7 @@ static int config(knot_msg_config *config)
 	char logString[6];
 
 	err = configf(config->sensor_id, config->values.event_flags,
+						config->values.notify_flags,
 						config->values.time_sec,
 						&config->values.lower_limit,
 						&config->values.upper_limit);
