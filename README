@@ -16,21 +16,36 @@ Architecture for better understanding).
 It provides the Radio and Protocol abstractions for the application. The application
 builder just need implement the read/write functions for its sensors/actuators,
 register a Data Item (sensor or actuator) on the library and call the run() method
- on its main loop routine.
+on its main loop routine.
 
 
 
 Compilation and installation
 ============================
 
-Currently the KNoT Thing library supports only the Arduino platform. The build process will generate an Arduino library zip file (KNoTThing.zip) containing all source code. This zip file can be imported on Arduino IDE. 
+Currently the KNoT Thing library supports only the Arduino platform.
+The build process will generate an Arduino library zip file (KNoTThing.zip)
+containing all source code. This zip file can be imported on Arduino IDE. 
 
 In order to compiler the source code you need following software packages:
 	- GCC compiler
 	- GNU C library
 
 How to build:
-	make
+```
+$make
+```
+
+Notice that running make alone will create your KNoTThing.zip file using the
+current knot-thing-source directory that you have locally and download the
+repositories for knot-hal-source and knot-protocol-source.
+It is possible to build the KNoT Thing library for an specific release.
+This will download all three repositories (thing, hal and protocol) for 
+that specific tag and won't use anything locally stored.
+```
+$make release=<tag>
+``` 
+e.g.:$make release=KNOT-V01.01
 
 How to install:
 	Refer to Arduino library guide in order to install KNoT Thing library on Arduino IDE: https://www.arduino.cc/en/Guide/Libraries
