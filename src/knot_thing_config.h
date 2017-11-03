@@ -9,3 +9,10 @@
 
 /* Use defined: Thing amount of data source/sinks */
 #define KNOT_THING_DATA_MAX		3
+
+/*
+ * On most recent hardware releases (StarterKit v01.01), KNoTThing
+ * has changed its pinout. To use legacy (StarterKit v01.01),
+ * remove comment from line below
+ */
+//#define KNOTTHING_LEGACY

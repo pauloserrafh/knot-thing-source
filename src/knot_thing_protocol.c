@@ -20,7 +20,11 @@
 #include <hal/avr_unistd.h>
 #include <hal/avr_log.h>
 #define CLEAR_EEPROM_PIN 7
+#ifdef KNOTTHING_LEGACY
+#define PIN_LED_STATUS   2 //LED used to show thing status
+#else
 #define PIN_LED_STATUS   6 //LED used to show thing status
+#endif
 #endif
 
 #include <hal/storage.h>

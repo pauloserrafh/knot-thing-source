@@ -90,6 +90,12 @@ endif
 	$(CP) -r $(KNOT_THING_FILES)/*.c ./$(KNOT_THING_NAME)/src
 	$(CP) -r $(KNOT_THING_FILES)/*.cpp ./$(KNOT_THING_NAME)/src
 
+ifdef legacy
+ifeq ($(legacy), true)
+	$$(sed -i s/[/][/]//g ./$(KNOT_THING_NAME)/src/knot_thing_config.h)
+endif
+endif
+
 	#Filling protocol directory
 	$(CP) -r $(KNOT_PROTOCOL_LIB_DIR)/*.h ./$(KNOT_THING_NAME)/src
 	$(CP) -r $(KNOT_PROTOCOL_LIB_DIR)/*.c ./$(KNOT_THING_NAME)/src
