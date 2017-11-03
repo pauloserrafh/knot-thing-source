@@ -54,8 +54,9 @@ KNOT_HAL_SRC_SPI_LIB_DIR = ./$(KNOT_THING_DOWNLOAD_DIR)/$(KNOT_HAL_LIB_REPO)/src
 
 default: all
 
-all:  $(KNOT_THING_TARGET)
+all:  clean-local build
 
+build: $(KNOT_THING_TARGET)
 
 $(KNOT_THING_DOWNLOAD_DIR):
 	$(MKDIR) -p ./$(KNOT_THING_DOWNLOAD_DIR)
